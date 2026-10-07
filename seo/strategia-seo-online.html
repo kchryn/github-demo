@@ -1,0 +1,480 @@
+<title>Strategia SEO „online” – Professional English</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (~72ch) with wide data blocks; section index on the left at desktop widths */
+:root {
+  --paper: #f7f8fa;
+  --panel: #ffffff;
+  --ink: #141a24;
+  --ink-2: #4a5465;
+  --ink-3: #6b7486;
+  --rule: #dde2ea;
+  --accent: #1f5fb8;
+  --accent-wash: #e6eefa;
+  --bar: #2a78d6;
+  --grid: #e7ebf1;
+  --good: #1a7f37; --good-bg: #e3f4e8;
+  --warn: #9a6200; --warn-bg: #fbf0d9;
+  --bad: #b42323; --bad-bg: #fbe5e5;
+  --serp-title: #1a0dab; --serp-url: #3c4043; --serp-desc: #4d5156;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10141b; --panel: #171c25; --ink: #eef1f6; --ink-2: #b4bccb; --ink-3: #8c95a6;
+    --rule: #2a313d; --accent: #7fb0f2; --accent-wash: #1b2a40; --bar: #3987e5; --grid: #252c37;
+    --good: #6fd38c; --good-bg: #16301f; --warn: #f0bf5a; --warn-bg: #352812; --bad: #f08a8a; --bad-bg: #3a1a1a;
+    --serp-title: #99c3ff; --serp-url: #c3c7cf; --serp-desc: #b4bccb;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10141b; --panel: #171c25; --ink: #eef1f6; --ink-2: #b4bccb; --ink-3: #8c95a6;
+  --rule: #2a313d; --accent: #7fb0f2; --accent-wash: #1b2a40; --bar: #3987e5; --grid: #252c37;
+  --good: #6fd38c; --good-bg: #16301f; --warn: #f0bf5a; --warn-bg: #352812; --bad: #f08a8a; --bad-bg: #3a1a1a;
+  --serp-title: #99c3ff; --serp-url: #c3c7cf; --serp-desc: #b4bccb;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 15.5px/1.6 var(--f-body); padding-inline: 16px; padding-block: 0 64px; }
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; }
+@media (max-width: 900px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 0; } nav.toc { display: none; } }
+nav.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; padding-top: 56px; font-size: 13px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; counter-reset: s; }
+nav.toc a { color: var(--ink-2); text-decoration: none; display: block; padding: 2px 0; }
+nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); }
+nav.toc .k { font-family: var(--f-mono); color: var(--ink-3); margin-right: 6px; }
+main { min-width: 0; }
+header.top { padding-block: 48px 28px; border-bottom: 1px solid var(--rule); }
+.eyebrow { font: 500 12px/1.3 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+h1 { font: 700 clamp(30px, 4.6vw, 46px)/1.08 var(--f-display); letter-spacing: -.02em; margin: 10px 0 14px; text-wrap: balance; }
+h2 { font: 700 26px/1.2 var(--f-display); letter-spacing: -.01em; margin: 0 0 14px; text-wrap: balance; }
+h3 { font: 600 17px/1.35 var(--f-body); margin: 26px 0 8px; text-wrap: balance; }
+p, li { max-width: 72ch; }
+p { margin: 0 0 12px; }
+.lede { font-size: 17.5px; color: var(--ink-2); max-width: 66ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-size: 13px; color: var(--ink-3); }
+section { padding-block: 40px 8px; border-bottom: 1px solid var(--rule); scroll-margin-top: 16px; }
+section:last-of-type { border-bottom: 0; }
+a { color: var(--accent); }
+code, .q { font-family: var(--f-mono); font-size: .86em; }
+.q { background: var(--accent-wash); color: var(--ink); padding: 1px 6px; border-radius: 4px; overflow-wrap: anywhere; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.note { border-left: 3px solid var(--warn); background: var(--warn-bg); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 14px; max-width: 72ch; margin: 14px 0; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* KPI strip */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; margin: 22px 0 8px; }
+.kpi { background: var(--panel); padding: 16px 18px; display: grid; gap: 4px; align-content: start; }
+.kpi b { font: 700 28px/1.1 var(--f-display); font-variant-numeric: tabular-nums; }
+.kpi span { font-size: 13px; color: var(--ink-2); }
+
+/* Bar list chart */
+.chart { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 18px 14px; margin: 18px 0; position: relative; }
+.chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; }
+.chart-head strong { font-weight: 600; }
+.chart-head small { color: var(--ink-3); }
+.scroll { overflow-x: auto; }
+.bl { min-width: 640px; display: grid; grid-template-columns: 230px minmax(200px, 1fr) 64px 60px 92px; column-gap: 14px; align-items: center; font-size: 13.5px; }
+.bl .h { font: 500 11.5px/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+.bl .h.r, .bl .r { text-align: right; }
+.bl .c { padding-block: 7px; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+.track { position: relative; height: 22px; background: linear-gradient(to right, var(--grid) 1px, transparent 1px) 0 0 / 33.333% 100%; }
+.track .b { position: absolute; left: 0; top: 4px; height: 14px; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
+.track .v { position: absolute; top: 2px; font-size: 12px; color: var(--ink-2); white-space: nowrap; padding-left: 6px; }
+.row-hit { cursor: default; }
+.row-hit:hover .b, .row-hit:focus-visible .b { filter: brightness(1.12); }
+.axis { display: flex; justify-content: space-between; font: 11px var(--f-mono); color: var(--ink-3); margin-top: 4px; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font: 500 12px/1 var(--f-body); padding: 4px 8px; border-radius: 999px; white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.good { color: var(--good); background: var(--good-bg); }
+.pill.warn { color: var(--warn); background: var(--warn-bg); }
+.pill.bad { color: var(--bad); background: var(--bad-bg); }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-size: 12.5px; line-height: 1.45; padding: 8px 10px; border-radius: 6px; max-width: 260px; z-index: 2; }
+
+/* Tables */
+.tbl { overflow-x: auto; margin: 14px 0 18px; border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 620px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { font: 500 11.5px/1.3 var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); background: var(--paper); }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td .u { font-family: var(--f-mono); font-size: 12.5px; word-break: break-all; }
+
+/* Problems list */
+.problems { display: grid; gap: 14px; margin: 16px 0; padding: 0; list-style: none; }
+.problems li { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; max-width: none; }
+.problems li b { display: block; margin-bottom: 4px; }
+.problems li p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+
+/* SERP previews */
+.serps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin: 16px 0; }
+.serp { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; min-width: 0; display: grid; gap: 3px; align-content: start; }
+.serp .path { font-size: 12.5px; color: var(--serp-url); word-break: break-all; }
+.serp .t { font-size: 18px; line-height: 1.3; color: var(--serp-title); font-family: Arial, Helvetica, sans-serif; }
+.serp .d { font-size: 13.5px; line-height: 1.5; color: var(--serp-desc); font-family: Arial, Helvetica, sans-serif; }
+.serp .len { font: 11.5px var(--f-mono); color: var(--ink-3); margin-top: 6px; }
+.serp .now { font-size: 12.5px; color: var(--ink-3); border-top: 1px dashed var(--rule); margin-top: 8px; padding-top: 8px; }
+
+/* Architecture tree */
+.tree { font-family: var(--f-mono); font-size: 13px; line-height: 1.75; background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; overflow-x: auto; white-space: pre; margin: 14px 0; color: var(--ink); }
+.tree .n { color: var(--good); }
+.tree .m { color: var(--ink-3); }
+
+/* Timeline */
+.phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+.phase { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+.phase .when { font: 500 12px var(--f-mono); color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+.phase h3 { margin: 4px 0 8px; }
+.phase ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-2); }
+.phase li { margin-bottom: 4px; }
+ul.plain { padding-left: 20px; }
+ul.plain li { margin-bottom: 6px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 32px; }
+.two > div { min-width: 0; }
+footer { color: var(--ink-3); font-size: 13px; padding-top: 24px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+<nav class="toc" aria-label="Spis treści">
+  <ol>
+    <li><a href="#diagnoza"><span class="k">1</span>Diagnoza z GSC</a></li>
+    <li><a href="#problemy"><span class="k">2</span>Co blokuje „online”</a></li>
+    <li><a href="#architektura"><span class="k">3</span>Architektura stron</a></li>
+    <li><a href="#onpage"><span class="k">4</span>Tytuły i treść</a></li>
+    <li><a href="#techniczne"><span class="k">5</span>Porządki techniczne</a></li>
+    <li><a href="#tresci"><span class="k">6</span>Plan treści i AI</a></li>
+    <li><a href="#linki"><span class="k">7</span>Autorytet i linki</a></li>
+    <li><a href="#plan"><span class="k">8</span>Harmonogram</a></li>
+    <li><a href="#kpi"><span class="k">9</span>Pomiar i cele</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="top">
+  <div class="eyebrow">professionalenglish.com.pl · strategia SEO</div>
+  <h1>Jak zdobyć widoczność na frazy „online”</h1>
+  <p class="lede">Google już pokazuje stronę na ponad 12 tys. wyświetleń zapytań z „online” w kwartale, ale prawie zawsze na drugiej stronie wyników. Strategia skupia się na tym, żeby przenieść te frazy z pozycji 11–20 do pierwszej piątki, zaczynając od Business English i angielskiego dla firm.</p>
+  <div class="meta">
+    <span>Dane: Google Search Console, 5.07–4.10.2026 (3 mies.)</span>
+    <span>Przygotowano: 7.10.2026</span>
+  </div>
+  <p class="note">Bezpośredni crawl strony był niemożliwy (polityka sieci środowiska blokuje domenę), więc audyt opiera się na eksporcie GSC i na tym, co widać w indeksie Google. Zalecenia on-page oznaczone „do sprawdzenia” warto zweryfikować na żywej stronie lub crawlerem (np. Screaming Frog).</p>
+</header>
+
+<section id="diagnoza">
+  <div class="eyebrow">1 · Diagnoza</div>
+  <h2>Popyt jest, kliknięć prawie nie ma</h2>
+  <div class="kpis">
+    <div class="kpi"><b class="num">2 114</b><span>kliknięć ogółem, 120 376 wyświetleń, CTR 1,76%</span></div>
+    <div class="kpi"><b class="num">178</b><span>zapytań z „online” w top 1000 fraz z GSC</span></div>
+    <div class="kpi"><b class="num">12 630</b><span>wyświetleń tych zapytań (15% wyświetleń fraz)</span></div>
+    <div class="kpi"><b class="num">87</b><span>kliknięć z nich, CTR 0,69%, średnia pozycja 14,0</span></div>
+  </div>
+  <p>Dla porównania frazy brandowe (<span class="q">professional english school</span> i warianty) dały 444 kliknięcia z 1 782 wyświetleń. Prawie połowę kliknięć z widocznych zapytań przynoszą ludzie, którzy już znają szkołę. Frazy „online” to w praktyce nowi klienci spoza Rzeszowa, a dziś strona ich niemal nie pozyskuje.</p>
+
+  <div class="chart" id="clusterChart">
+    <div class="chart-head">
+      <strong>Wyświetlenia zapytań „online” wg tematu</strong>
+      <small>GSC, 3 miesiące · kolumny: kliknięcia, CTR, średnia pozycja</small>
+    </div>
+    <div class="scroll">
+      <div class="bl" role="table" aria-label="Klastry zapytań online">
+        <div class="h" role="columnheader">Temat zapytań</div>
+        <div class="h" role="columnheader">Wyświetlenia</div>
+        <div class="h r" role="columnheader">Klik.</div>
+        <div class="h r" role="columnheader">CTR</div>
+        <div class="h r" role="columnheader">Pozycja</div>
+      </div>
+      <div class="bl" id="blRows"></div>
+      <div class="bl"><div></div><div class="axis"><span>0</span><span>1 500</span><span>3 000</span><span>4 500</span></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="tip" id="tip" hidden></div>
+  </div>
+
+  <h3>Najważniejsze wnioski z danych</h3>
+  <ul class="plain">
+    <li><b>Business English i angielski dla firm online to 6 438 wyświetleń i 1 kliknięcie.</b> Średnia pozycja 13,7–14,8, czyli druga strona. To największa i najbardziej dochodowa (B2B) luka.</li>
+    <li><b>Ogólne frazy „szkoła językowa online” i „kurs angielskiego online (z lektorem)”</b> dają 4 162 wyświetlenia i 59 kliknięć. <span class="q">szkoła językowa online</span> (568 wyśw., poz. 11,7) i <span class="q">kurs angielskiego online z lektorem</span> (289 wyśw., poz. 7,8) są o krok od pierwszej strony.</li>
+    <li><b>Kursy wakacyjne online działają</b>: średnia pozycja 3,9, a <span class="q">wakacyjny kurs angielskiego dla dorosłych online</span> ma pozycję 2,4. To dowód, że dedykowana podstrona z „online” w tytule i H1 wygrywa.</li>
+    <li><b>Problem CTR przy dobrych pozycjach</b>: <span class="q">toefl kurs online</span> poz. 5,0 i 0 kliknięć ze 145 wyświetleń; <span class="q">angielski biznesowy b2b online</span> poz. 5,0, 0 kliknięć. Strona jest widoczna, ale tytuł nie odpowiada na „online”.</li>
+    <li><b>Urządzenia</b>: desktop to 63% wyświetleń, ale CTR 0,96% i pozycja 12,7 (mobile: CTR 3,13%, poz. 8,3). Frazy B2B wpisuje się głównie z komputera w pracy, więc to właśnie tam strona przegrywa.</li>
+    <li><b>Miasto + online</b>: <span class="q">angielski biznesowy kurs online warszawa</span> (167), <span class="q">… łódź</span> (104), <span class="q">… kraków</span> (88), <span class="q">nauka angielskiego online przemyśl</span> (30). Klienci szukają zajęć online, ale dopisują swoje miasto.</li>
+    <li><b>Zapytania pisane jak pytania do AI</b>: <span class="q">jakie internetowe szkoły językowe mają zajęcia indywidualne?</span> (97 + 74), <span class="q">… mają lekcje próbne?</span> (51 + 11), <span class="q">jakie kursy językowe oferują próbne egzaminy maturalne online?</span> (25). Taki ruch pochodzi z AI Mode / AI Overviews i wymaga treści w formie bezpośrednich odpowiedzi.</li>
+  </ul>
+
+  <h3>Strony, które już łapią ruch „online”</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>URL</th><th class="r">Klik.</th><th class="r">Wyśw.</th><th class="r">CTR</th><th class="r">Poz.</th><th>Ocena</th></tr></thead>
+      <tbody>
+        <tr><td class="u">/kurs-business-english/</td><td class="r">56</td><td class="r">16 864</td><td class="r">0,33%</td><td class="r">16,8</td><td>Drugi URL witryny pod względem wyświetleń; główny kandydat do przebudowy</td></tr>
+        <tr><td class="u">/cennik-szkola-jezykowa-rzeszow/</td><td class="r">104</td><td class="r">10 774</td><td class="r">0,97%</td><td class="r">9,3</td><td>Brak cen online (<span class="q">kursy językowe online cena</span> poz. 30,8)</td></tr>
+        <tr><td class="u">/kursy-jezyka-angielskiego-dla-firm/</td><td class="r">8</td><td class="r">8 465</td><td class="r">0,09%</td><td class="r">8,0</td><td>Fatalny CTR na 1. stronie; tytuł/opis do wymiany</td></tr>
+        <tr><td class="u">/kursy-wakacyjne-online/</td><td class="r">70</td><td class="r">5 504</td><td class="r">1,27%</td><td class="r">12,2</td><td>Działa sezonowo, utrzymać pod stałym URL</td></tr>
+        <tr><td class="u">/egzamin-toefl/</td><td class="r">17</td><td class="r">4 648</td><td class="r">0,37%</td><td class="r">11,1</td><td>Brak „online” w tytule mimo pozycji 5 na frazę online</td></tr>
+        <tr><td class="u">/kursy-jezykowe-online-z-lektorem/</td><td class="r">43</td><td class="r">4 217</td><td class="r">1,02%</td><td class="r">11,3</td><td>Naturalny hub „szkoła językowa online”</td></tr>
+        <tr><td class="u">/kurs-technical-english/</td><td class="r">35</td><td class="r">3 449</td><td class="r">1,01%</td><td class="r">12,4</td><td>Łapie frazy branżowe (energetyka, gaz, inżynieria)</td></tr>
+        <tr><td class="u">/kursy-jezykowe-dla-firm-2/</td><td class="r">3</td><td class="r">1 689</td><td class="r">0,18%</td><td class="r">8,3</td><td>Duplikat strony dla firm, kanibalizacja</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="problemy">
+  <div class="eyebrow">2 · Przyczyny</div>
+  <h2>Pięć rzeczy, które trzymają frazy „online” na drugiej stronie</h2>
+  <ol class="problems">
+    <li><b>Strona mówi Google „Rzeszów”, a nie „cała Polska online”.</b><p>Kluczowe adresy (cennik, metoda, polkolonie, strona główna) są lokalne. Oferta online wygląda na dodatek do szkoły stacjonarnej, więc na ogólnopolskie frazy wygrywają szkoły typowo internetowe. Brakuje jasnego sygnału: „uczymy online w całej Polsce i za granicą”.</p></li>
+    <li><b>Jedna strona próbuje obsłużyć kilka intencji.</b><p>/kurs-business-english/ zbiera wyświetlenia na „angielski biznesowy online”, „dla firm online”, „dla menedżerów”, „b2b”. Ktoś szukający kursu dla siebie i dział HR szukający szkolenia dla zespołu potrzebują innej strony.</p></li>
+    <li><b>Duplikaty i kanibalizacja.</b><p>Dwie strony dla firm, dwie o metodzie komunikatywnej, dwa przewodniki po półkoloniach, dwie galerie, kilka wersji profili lektorów i szablony Elementora w indeksie. Sygnały rankingowe rozkładają się na kilka słabszych adresów.</p></li>
+    <li><b>Tytuły i opisy nie odpowiadają na „online”.</b><p>Pozycja 5–8 z CTR bliskim zera (TOEFL, dla firm, b2b) oznacza, że snippet nie przekonuje. Na desktopie, gdzie konkurencja jest silniejsza, efekt jest najmocniejszy.</p></li>
+    <li><b>Mało treści wspierających i linków.</b><p>/blog/ ma 17 wyświetleń w kwartale, artykuły „jak wybrać szkołę/kurs” po ~190 wyświetleń i 0 kliknięć. Brak tematycznego zaplecza o nauce online i brak zewnętrznych wzmianek o szkole jako szkole online.</p></li>
+  </ol>
+</section>
+
+<section id="architektura">
+  <div class="eyebrow">3 · Architektura</div>
+  <h2>Jedna strona na jedną intencję, z hubem „online” na górze</h2>
+  <p>Zamiast tworzyć nowe adresy od zera, wykorzystujemy URL-e, które już mają wyświetlenia, i dokładamy tylko strony pod intencje bez dopasowanej podstrony. Nowe adresy oznaczone na zielono.</p>
+<div class="tree">/  (strona główna: „Szkoła językowa Rzeszów i online”, blok „Kursy online w całej Polsce”)
+└─ /kursy-jezykowe-online-z-lektorem/   <span class="m">HUB · szkoła językowa online, kurs angielskiego online z lektorem</span>
+   ├─ /kurs-business-english/            <span class="m">angielski biznesowy online, Business English online (osoba prywatna)</span>
+   ├─ /kursy-jezyka-angielskiego-dla-firm/   <span class="m">angielski dla firm online, szkolenia dla pracowników online (HR, B2B)</span>
+   │    └─ /kursy-jezykowe-dla-firm-2/   <span class="m">→ 301 na stronę wyżej</span>
+   ├─ /kurs-technical-english/           <span class="m">angielski techniczny online, dla inżynierów</span>
+   │    ├─ <span class="n">/angielski-dla-energetyki-online/</span>    <span class="m">przemysł energetyczny, naftowy, gazowy</span>
+   │    └─ <span class="n">/angielski-dla-sprzedazy-i-marketingu-online/</span>
+   ├─ <span class="n">/angielski-online-indywidualnie/</span>     <span class="m">lekcje 1:1 online, angielski indywidualnie online</span>
+   ├─ /kursy-wakacyjne-online/           <span class="m">sezon: aktualizacja w kwietniu, stały URL bez roku</span>
+   ├─ /egzamin-toefl/                    <span class="m">+ sekcja „Kurs TOEFL online”</span>
+   ├─ /kurs-matura-j-angielski/          <span class="m">+ matura online, próbne matury online</span>
+   ├─ /angielski-dla-osmoklasistow/      <span class="m">+ egzamin ósmoklasisty online</span>
+   ├─ /angielski-dla-dzieci-10-13-lat/ · /angielski-dla-mlodziezy/   <span class="m">+ sekcja „zajęcia online”</span>
+   ├─ /test-j-angielski-online/          <span class="m">lead magnet: test poziomu A1–C2</span>
+   └─ /cennik-szkola-jezykowa-rzeszow/   <span class="m">+ sekcja „Cennik kursów online”</span></div>
+  <ul class="plain">
+    <li><b>Nowe strony twórz tylko pod realną ofertę.</b> Strony branżowe (energetyka, sprzedaż) mają sens, jeśli szkoła faktycznie prowadzi takie programy; to, że Google już łączy z nimi stronę, sugeruje, że temat jest obecny w treści.</li>
+    <li><b>Nie twórz stron „angielski online Warszawa/Kraków/Łódź”.</b> Takie podstrony to typowe doorway pages. Zamiast tego na hubie i stronie Business English dodaj sekcję „Uczymy online kursantów i firmy z całej Polski”, z nazwami miast i krótkimi case studies klientów spoza Rzeszowa.</li>
+    <li><b>Menu główne</b>: osobna pozycja „Kursy online” prowadząca do huba, z rozwijaną listą podstron. To najmocniejszy sygnał linkowania wewnętrznego, jaki strona może dać.</li>
+  </ul>
+</section>
+
+<section id="onpage">
+  <div class="eyebrow">4 · On-page</div>
+  <h2>Nowe tytuły i opisy dla stron z największym potencjałem</h2>
+  <p>Tytuł do ~60 znaków, fraza „online” na początku, konkretna korzyść w opisie. Elementy oferty w nawiasach kwadratowych wpisz tylko, jeśli są prawdziwe (np. lekcja próbna, cena od).</p>
+  <div class="serps">
+    <div class="serp"><div class="path">professionalenglish.com.pl › kurs-business-english</div><div class="t">Angielski biznesowy online – kurs Business English z lektorem</div><div class="d">Business English na żywo przez MS Teams: spotkania, negocjacje, prezentacje i e-maile. Zajęcia 1:1 i w małych grupach z całej Polski. [Bezpłatna lekcja próbna].</div><div class="len">tytuł 61 zn. · fraza: angielski biznesowy (kurs) online</div><div class="now">Dziś: poz. 16,8, CTR 0,33% przy 16 864 wyśw.</div></div>
+    <div class="serp"><div class="path">professionalenglish.com.pl › kursy-jezyka-angielskiego-dla-firm</div><div class="t">Kursy angielskiego dla firm online – szkolenia dla pracowników</div><div class="d">Szkolenia językowe dla zespołów online i stacjonarnie. Audyt językowy, program pod branżę, raporty postępów dla HR, faktura VAT. Zapytaj o ofertę dla firmy.</div><div class="len">tytuł 62 zn. · fraza: kurs angielskiego dla firm online</div><div class="now">Dziś: poz. 8,0, CTR 0,09% przy 8 465 wyśw.</div></div>
+    <div class="serp"><div class="path">professionalenglish.com.pl › kursy-jezykowe-online-z-lektorem</div><div class="t">Szkoła językowa online – kurs angielskiego z lektorem na żywo</div><div class="d">Ucz się angielskiego online z doświadczonym lektorem: dzieci, młodzież, dorośli i firmy. Ponad 20 lat doświadczenia. Sprawdź poziom testem online i zapisz się.</div><div class="len">tytuł 61 zn. · fraza: szkoła językowa online</div><div class="now">Dziś: poz. 11,3, CTR 1,02% przy 4 217 wyśw.</div></div>
+    <div class="serp"><div class="path">professionalenglish.com.pl › egzamin-toefl</div><div class="t">Kurs TOEFL online – przygotowanie do egzaminu z lektorem</div><div class="d">Przygotowanie do TOEFL iBT online: wszystkie części egzaminu, próbne testy i strategie. Zajęcia indywidualne z lektorem, elastyczny grafik. Sprawdź terminy.</div><div class="len">tytuł 56 zn. · fraza: toefl kurs online</div><div class="now">Dziś: <span class="q">toefl kurs online</span> poz. 5,0, 0 kliknięć</div></div>
+    <div class="serp"><div class="path">professionalenglish.com.pl › kurs-technical-english</div><div class="t">Angielski techniczny online – kurs dla inżynierów i przemysłu</div><div class="d">Technical English online dla inżynierów, energetyki, branży naftowej i gazowej. Słownictwo branżowe, dokumentacja, spotkania techniczne. Program pod Twoją firmę.</div><div class="len">tytuł 61 zn. · fraza: angielski techniczny online</div><div class="now">Dziś: poz. 12,4, CTR 1,01%</div></div>
+    <div class="serp"><div class="path">professionalenglish.com.pl › cennik-szkola-jezykowa-rzeszow</div><div class="t">Cennik kursów angielskiego – Rzeszów i online</div><div class="d">Aktualne ceny kursów 2026/27: zajęcia stacjonarne w Rzeszowie, kursy online w grupie i indywidualnie, szkolenia dla firm. [Ceny od … zł za lekcję].</div><div class="len">tytuł 45 zn. · fraza: kursy językowe online cena</div><div class="now">Dziś: <span class="q">kursy językowe online cena</span> poz. 30,8</div></div>
+  </div>
+  <p>Stronę główną warto przemianować na „Szkoła językowa Rzeszów i online | Professional English School”: zachowuje frazę lokalną i dokłada „online” na stronie z największym autorytetem (41 854 wyśw., poz. 8,0).</p>
+
+  <h3>Co musi się znaleźć na stronach online (szablon treści)</h3>
+  <div class="two">
+    <div>
+      <ul class="plain">
+        <li><b>H1 z „online”</b> i pierwszy akapit, który od razu mówi: zajęcia na żywo z lektorem, z dowolnego miejsca w Polsce i za granicą.</li>
+        <li><b>„Jak wyglądają zajęcia online”</b>: platforma (MS Teams, Pearson English Connect), długość lekcji, wielkość grup, materiały, zadania domowe, co jeśli opuszczę zajęcia. Najlepiej z krótkim wideo lub zrzutami ekranu z lekcji.</li>
+        <li><b>Formy i ceny</b>: 1:1, grupa, firma, z ceną „od” lub zakresem. Brak ceny to najczęstszy powód wyjścia ze strony.</li>
+        <li><b>Lektorzy</b>: zdjęcia, kwalifikacje i linki do profili (E-E-A-T).</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="plain">
+        <li><b>Dowody</b>: opinie z Google z cytatami kursantów online, logotypy i case studies firm (za zgodą klienta), liczba lat i kursantów.</li>
+        <li><b>Certyfikat</b>: czy i jaki kursant dostaje. Zapytania z „z certyfikatem” mają łącznie ok. 190 wyświetleń.</li>
+        <li><b>FAQ z odpowiedziami pisanymi wprost</b>, pytania z sekcji 6.</li>
+        <li><b>Jedno główne CTA</b> (test poziomu / konsultacja / lekcja próbna) powtórzone na górze i na dole.</li>
+        <li><b>Linki wewnętrzne</b> do huba, cennika, testu i 2–3 pokrewnych kursów, z opisowymi anchorami („kurs Business English online”, a nie „więcej”).</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Dane strukturalne</h3>
+  <p>Dodaj <code>EducationalOrganization</code> (adres w Rzeszowie, <code>areaServed: PL</code>) na stronie głównej i <code>Course</code> z <code>hasCourseInstance</code> i <code>courseMode: "online"</code> na stronach kursów, plus <code>FAQPage</code> i <code>BreadcrumbList</code>. Google ograniczył wyniki rozszerzone dla kursów i FAQ, więc nie liczcie na dodatkowe elementy w wynikach; schema pomaga Google i systemom AI zrozumieć, że kurs jest online. W GSC widać wyświetlenia „Opisy produktów” (1 230, poz. 22,9). Sprawdź, które strony mają schema <code>Product</code>, i zostaw je tylko tam, gdzie dane o cenie są aktualne.</p>
+</section>
+
+<section id="techniczne">
+  <div class="eyebrow">5 · Technika</div>
+  <h2>Porządki widoczne w raporcie Strony</h2>
+  <p>Wszystkie adresy poniżej pojawiają się w eksporcie GSC, czyli Google je indeksuje i pokazuje.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Problem</th><th>Adresy</th><th>Działanie</th></tr></thead>
+      <tbody>
+        <tr><td>Duplikat strony dla firm</td><td class="u">/kursy-jezykowe-dla-firm-2/</td><td>301 → /kursy-jezyka-angielskiego-dla-firm/</td></tr>
+        <tr><td>Dwie strony o metodzie komunikatywnej, literówka w slugu</td><td class="u">/kurs-jezyka-angielskiego-metoda-komunikatyna/ · /metoda-komunikatywna-angielski-rzeszow/</td><td>Scal treść w jedną stronę, 301 z drugiej</td></tr>
+        <tr><td>Dwa przewodniki po półkoloniach</td><td class="u">/przewodnik-polkolonii-czym-sa-i-dla-kogo/ · /przewodnik-polkolonii-letnich-czym-sa-i-dla-kogo/</td><td>Scal, 301</td></tr>
+        <tr><td>Dwie galerie</td><td class="u">/galeria-zdjec-szkola-jezykowa/ · /szkola-jezykowa-galeria-zdjec/</td><td>Scal, 301</td></tr>
+        <tr><td>Wersje profili lektorów</td><td class="u">/lektor-izabela/ · /lektor-izabela12/ · /lektor-iza/ · /lektor-kornelia/ · /lektor-kornelia1/</td><td>Zostaw po jednym, 301 z pozostałych</td></tr>
+        <tr><td>Szablony i strony robocze</td><td class="u">/lektorzy-template/ · /lektorzy-template1/ · /elementor-11017/ · /elementor-11108/ · /angielski-dla-dzieci-new/ · /qsm_quiz/…_old111/</td><td>Usuń (410) lub noindex i wyłącz z mapy witryny</td></tr>
+        <tr><td>Strony wewnętrzne dla klientów</td><td class="u">/ankieta-dla-bsh/ · /spotkanie-ewaluacyjne/</td><td>noindex (ankieta dla klienta firmowego nie powinna być w Google)</td></tr>
+        <tr><td>Katalog wtyczki w indeksie</td><td class="u">/wp-content/plugins/use-your-drive/vendors/ZipStream/</td><td>Zablokuj listowanie katalogów, usuń z indeksu</td></tr>
+        <tr><td>Nieaktualne regulaminy PDF</td><td class="u">/wp-content/uploads/2022/…/Regulamin-Kursow.pdf · /2023/05/…regulamin-kursow-2023.pdf</td><td>301 na aktualną stronę regulaminu</td></tr>
+        <tr><td>Możliwy stary adres TOEFL w indeksie</td><td class="u">/przygotowanie-kurs-toefl-rzeszow (tytuł „Szkoła językowa Rzeszów”)</td><td>Do sprawdzenia: 301 → /egzamin-toefl/</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="plain">
+    <li><b>Core Web Vitals na desktopie i mobile</b> (do sprawdzenia w PageSpeed Insights i raporcie GSC): strony na Elementorze bywają ciężkie, a frazy B2B przegrywają właśnie na desktopie.</li>
+    <li><b>Mapa witryny</b>: po porządkach wyślij ponownie i sprawdź w raporcie Indeksowanie, czy zostały tylko kanoniczne adresy.</li>
+    <li><b>Wersje językowe</b>: 1 971 wyświetleń z Wielkiej Brytanii i 1 954 z USA przy CTR 0,3%. Jeśli strona ma treści po angielsku, sprawdź <code>hreflang</code>; jeśli nie, to ruch Polonii, którą warto zaprosić wprost („uczymy online także Polaków za granicą”).</li>
+  </ul>
+</section>
+
+<section id="tresci">
+  <div class="eyebrow">6 · Treści</div>
+  <h2>Treści, które budują temat „nauka online” i odpowiadają AI</h2>
+  <p>Każdy artykuł linkuje do jednej strony ofertowej z sekcji 3. Dwa artykuły miesięcznie wystarczą, jeśli są konkretne i aktualizowane.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Temat artykułu</th><th>Odpowiada na zapytania z GSC</th><th>Linkuje do</th></tr></thead>
+      <tbody>
+        <tr><td>Jak wybrać szkołę językową online: 10 pytań przed zapisem (scalenie dwóch obecnych poradników „jak wybrać”)</td><td><span class="q">najlepsza szkoła języka angielskiego online</span>, pytania o zajęcia indywidualne i lekcje próbne</td><td>Hub online</td></tr>
+        <tr><td>Kurs angielskiego online czy stacjonarny? Porównanie efektów i kosztów</td><td><span class="q">kurs angielskiego online</span>, <span class="q">kursy językowe online cena</span></td><td>Hub, cennik</td></tr>
+        <tr><td>Business English na spotkania online: zwroty na calle, Teams i Zoom</td><td><span class="q">angielski w biznesie kurs online</span>, <span class="q">kurs angielski na spotkaniach i negocjacjach online</span></td><td>Business English</td></tr>
+        <tr><td>Szkolenia językowe dla pracowników online: jak HR mierzy efekty</td><td><span class="q">szkolenia językowe dla pracowników online</span>, <span class="q">angielski dla firm online</span></td><td>Dla firm</td></tr>
+        <tr><td>Rozmowa kwalifikacyjna po angielsku: pytania, odpowiedzi, przygotowanie online</td><td><span class="q">szkoły angielskiego online przygotowujące do rozmów zawodowych</span></td><td>1:1 online, Business English</td></tr>
+        <tr><td>Kurs online z certyfikatem: który certyfikat ma wartość dla pracodawcy</td><td><span class="q">kurs angielskiego online z certyfikatem</span> (+5 wariantów)</td><td>Hub, TOEFL</td></tr>
+        <tr><td>Jak przygotować się do TOEFL online w 8 tygodni</td><td><span class="q">toefl kurs online</span>, <span class="q">kursy toefl online</span></td><td>TOEFL</td></tr>
+        <tr><td>Egzamin ósmoklasisty z angielskiego: plan nauki online od października do maja</td><td><span class="q">kurs angielskiego dla ósmoklasisty online</span> (poz. 27)</td><td>Ósmoklasiści</td></tr>
+        <tr><td>Próbna matura z angielskiego online: kiedy i jak</td><td><span class="q">jakie kursy językowe oferują próbne egzaminy maturalne online?</span></td><td>Matura</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Pytania do FAQ, zaczerpnięte z zapytań</h3>
+  <p>Odpowiadaj pierwszym zdaniem wprost („Tak, prowadzimy…”), potem szczegóły. Taki format najłatwiej cytują AI Overviews i asystenci AI.</p>
+  <ul class="plain">
+    <li>Czy zajęcia online są indywidualne, czy w grupie?</li>
+    <li>Czy mogę umówić bezpłatną lekcję próbną online?</li>
+    <li>Czy kurs online kończy się certyfikatem?</li>
+    <li>Ile kosztuje kurs angielskiego online?</li>
+    <li>Na jakiej platformie odbywają się lekcje i czego potrzebuję?</li>
+    <li>Czy mogę uczyć się online, mieszkając poza Rzeszowem albo za granicą?</li>
+    <li>Czy przygotowujecie online do rozmowy kwalifikacyjnej lub matury (z próbnym egzaminem)?</li>
+    <li>Jak wygląda szkolenie online dla całego zespołu w firmie?</li>
+  </ul>
+</section>
+
+<section id="linki">
+  <div class="eyebrow">7 · Off-page</div>
+  <h2>Autorytet szkoły online poza własną stroną</h2>
+  <ul class="plain">
+    <li><b>Profil Firmy w Google</b>: dodaj usługi „Kursy angielskiego online”, „Business English online”, „Szkolenia językowe dla firm online”; publikuj posty o ofercie online i zbieraj opinie, prosząc kursantów online o wspomnienie formy zajęć.</li>
+    <li><b>Katalogi i porównywarki szkół</b> z kategorią „online” (ogólnopolskie katalogi szkół językowych, serwisy szkoleń dla firm, bazy usług rozwojowych, np. BUR, jeśli szkoła tam działa).</li>
+    <li><b>Case studies B2B</b>: 2–3 opisy współpracy z firmami (za zgodą), publikowane u siebie i podsyłane do portali HR i branżowych jako artykuł ekspercki.</li>
+    <li><b>Partnerstwa</b>: Pearson (strona o Pearson English Connect już ma 4 299 wyświetleń), lokalne uczelnie i izby gospodarcze z linkiem do oferty dla firm.</li>
+    <li><b>Digital PR z danymi</b>: krótki raport „Jak Polacy uczą się angielskiego online w 2027” na podstawie ankiety wśród kursantów, który media i blogi HR chętnie cytują.</li>
+  </ul>
+</section>
+
+<section id="plan">
+  <div class="eyebrow">8 · Harmonogram</div>
+  <h2>Kolejność prac na 6 miesięcy</h2>
+  <div class="phases">
+    <div class="phase"><div class="when">Tydzień 1–2</div><h3>Szybkie efekty</h3><ul>
+      <li>Nowe tytuły i opisy dla 7 stron z sekcji 4</li>
+      <li>301 i noindex z sekcji 5, nowa mapa witryny</li>
+      <li>„Kursy online” w menu głównym</li>
+      <li>Widok w GSC z filtrem regex (sekcja 9)</li>
+    </ul></div>
+    <div class="phase"><div class="when">Tydzień 3–6</div><h3>Strony pieniężne</h3><ul>
+      <li>Przebudowa /kurs-business-english/ i /kursy-jezyka-angielskiego-dla-firm/ według szablonu treści</li>
+      <li>Hub online z sekcją „cała Polska”</li>
+      <li>Cennik kursów online</li>
+      <li>FAQ i schema na tych stronach</li>
+    </ul></div>
+    <div class="phase"><div class="when">Miesiąc 2–3</div><h3>Nowe strony i sekcje</h3><ul>
+      <li>/angielski-online-indywidualnie/</li>
+      <li>Strony branżowe, jeśli oferta istnieje</li>
+      <li>Sekcje online: TOEFL, matura, ósmoklasiści, dzieci i młodzież</li>
+      <li>Test poziomu online jako lead magnet</li>
+    </ul></div>
+    <div class="phase"><div class="when">Miesiąc 3–6</div><h3>Treści i autorytet</h3><ul>
+      <li>2 artykuły miesięcznie z sekcji 6</li>
+      <li>Case studies B2B, katalogi, opinie</li>
+      <li>Grudzień: treści pod styczniowy szczyt „kurs angielskiego online”</li>
+      <li>Kwiecień: aktualizacja /kursy-wakacyjne-online/</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="kpi">
+  <div class="eyebrow">9 · Pomiar</div>
+  <h2>Jak mierzyć postęp</h2>
+  <p>W GSC (Skuteczność → Zapytanie → Wyrażenie regularne) ustaw filtr <code>onlin|zdaln|internet|przez skype</code> i porównuj kwartał do kwartału. Osobno śledź klastry Business English i „dla firm”.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Wskaźnik</th><th class="r">Dziś (Q3 2026)</th><th class="r">Cel po 6 mies.</th></tr></thead>
+      <tbody>
+        <tr><td>Kliknięcia z zapytań „online” na kwartał</td><td class="r">87</td><td class="r">400+</td></tr>
+        <tr><td>Średnia pozycja zapytań „online”</td><td class="r">14,0</td><td class="r">≤ 8</td></tr>
+        <tr><td>Business English + dla firm online: średnia pozycja</td><td class="r">13,7–14,8</td><td class="r">≤ 7</td></tr>
+        <tr><td>CTR /kurs-business-english/</td><td class="r">0,33%</td><td class="r">≥ 1,5%</td></tr>
+        <tr><td>CTR /kursy-jezyka-angielskiego-dla-firm/</td><td class="r">0,09%</td><td class="r">≥ 2%</td></tr>
+        <tr><td>CTR na desktopie (cała witryna)</td><td class="r">0,96%</td><td class="r">≥ 1,8%</td></tr>
+        <tr><td>Zapytania ofertowe z formularzy na stronach online (GA4)</td><td class="r">do ustalenia</td><td class="r">pomiar od startu</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><b>Skąd cel 400+:</b> gdyby klastry Business English, „dla firm” i ogólne „szkoła/kurs online” (10 600 wyświetleń) weszły do pierwszej piątki z CTR około 5%, dałyby ok. 530 kliknięć na kwartał. To szacunek rzędu wielkości, liczony tylko na widocznych zapytaniach; GSC ukrywa część rzadkich fraz, więc realny popyt jest większy. Przyrost oznaczałby ok. +20–25% całego ruchu z Google, w dodatku głównie z segmentu B2B.</p>
+  <p><b>Kontekst sezonowy:</b> kliknięcia w kwartale były stabilne (lipiec 731, sierpień 642, wrzesień 678). Pierwsze efekty zmian tytułów zobaczysz po 2–4 tygodniach, efekty przebudowy treści po 2–3 miesiącach.</p>
+</section>
+
+<footer>Źródło danych: eksport Google Search Console „Performance on Search”, typ wyszukiwania: sieć, ostatnie 3 miesiące (5.07–4.10.2026). Zapytania „online” wyodrębnione regułą <code>onlin|zdaln|internet</code> z 1 000 najczęstszych zapytań.</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  var data = [
+    { n: "Business English online", q: 19, i: 4096, c: 1, ctr: "0,0%", p: 13.7, ex: "angielski biznesowy kurs online, business english kurs online" },
+    { n: "Kurs angielskiego online / z lektorem", q: 47, i: 2483, c: 31, ctr: "1,2%", p: 15.3, ex: "kurs angielskiego online, kurs angielskiego online z lektorem" },
+    { n: "Angielski dla firm online", q: 30, i: 2342, c: 0, ctr: "0,0%", p: 14.8, ex: "kurs angielskiego dla firm online, angielski online dla firm" },
+    { n: "Szkoła językowa online", q: 23, i: 1679, c: 28, ctr: "1,7%", p: 13.5, ex: "szkoła językowa online, szkoła angielskiego online" },
+    { n: "Egzaminy i certyfikaty online", q: 22, i: 734, c: 3, ctr: "0,4%", p: 20.4, ex: "toefl kurs online, kurs angielskiego dla ósmoklasisty online" },
+    { n: "Kursy wakacyjne online", q: 7, i: 727, c: 17, ctr: "2,3%", p: 3.9, ex: "wakacyjny kurs angielskiego dla dorosłych online" },
+    { n: "Branżowy i techniczny online", q: 21, i: 378, c: 1, ctr: "0,3%", p: 12.9, ex: "kurs angielski dla przemysłu gazowego online" },
+    { n: "Dzieci i młodzież online", q: 9, i: 191, c: 6, ctr: "3,1%", p: 13.3, ex: "angielski online dla 13 latka" }
+  ];
+  var max = 4500, rows = document.getElementById("blRows"), tip = document.getElementById("tip"), chart = document.getElementById("clusterChart");
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00a0"); }
+  function pill(p) {
+    var cls = p <= 10 ? "good" : p <= 20 ? "warn" : "bad", lbl = p <= 10 ? "str. 1" : p <= 20 ? "str. 2" : "dalej";
+    return '<span class="pill ' + cls + '">' + String(p).replace(".", ",") + " · " + lbl + "</span>";
+  }
+  data.forEach(function (d) {
+    var pct = (d.i / max) * 100;
+    var html =
+      '<div class="c">' + d.n + "</div>" +
+      '<div class="c row-hit" tabindex="0" data-k="' + d.n + '"><div class="track"><div class="b" style="width:' + pct + '%"></div><span class="v" style="left:' + pct + '%">' + fmt(d.i) + "</span></div></div>" +
+      '<div class="c r">' + d.c + "</div>" +
+      '<div class="c r">' + d.ctr + "</div>" +
+      '<div class="c r">' + pill(d.p) + "</div>";
+    rows.insertAdjacentHTML("beforeend", html);
+  });
+  function show(el, d) {
+    tip.innerHTML = "<b>" + d.n + "</b><br>" + fmt(d.i) + " wyświetleń · " + d.c + " klik. · CTR " + d.ctr + "<br>" + d.q + " zapytań, np. " + d.ex;
+    tip.hidden = false;
+    var r = el.getBoundingClientRect(), cr = chart.getBoundingClientRect();
+    var left = Math.min(r.left - cr.left + 10, cr.width - 270);
+    tip.style.left = Math.max(8, left) + "px";
+    tip.style.top = (r.bottom - cr.top + 4) + "px";
+  }
+  rows.querySelectorAll(".row-hit").forEach(function (el) {
+    var d = data.filter(function (x) { return x.n === el.getAttribute("data-k"); })[0];
+    el.addEventListener("mouseenter", function () { show(el, d); });
+    el.addEventListener("focus", function () { show(el, d); });
+    el.addEventListener("mouseleave", function () { tip.hidden = true; });
+    el.addEventListener("blur", function () { tip.hidden = true; });
+  });
+})();
+</script>
